@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.djunderworld.jstay.engine.db.common.sql">
+
+	<!-- SQL 공통 함수  -->
+	<sql id="selectMaxWithoutWhere">
+		select 	Max(${field}) as ${alias}
+				from ${table}
+	</sql>
+
+	<sql id="selectMax">
+		select  Max(${field}) as ${alias}
+				from ${table}
+				where ${column} =
+	</sql>
+
+	<sql id="selectCount">
+		select 	count(id) as ${alias}
+				from ${table}
+				where ${column} =
+	</sql>
+
+	<sql id="addColumn">
+		AND ${column} =
+	</sql>
+
+
+	<!-- 테이블 별 컬럼  -->
+
+
+</mapper>
