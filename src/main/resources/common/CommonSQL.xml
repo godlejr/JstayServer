@@ -26,7 +26,14 @@
 	</sql>
 
 
-	<!-- 테이블 별 컬럼  -->
+		<!-- 테이블 별 컬럼  -->
+	<sql id="HouseUserColumns">
+		${houseUserAlias}.id as ${prefix}id,
+		${houseUserAlias}.user_id as ${prefix}user_id,
+		${houseUserAlias}.house_id as ${prefix}house_id,
+		${houseUserAlias}.created_at as ${prefix}created_at,
+		${houseUserAlias}.updated_at as ${prefix}updated_at
+	</sql>
 
 
 </mapper>

@@ -107,11 +107,8 @@
 
 	<!-- 스프링 시큐리티 예외 -->
 	<security:http pattern="/" security="none" />
-	<security:http pattern="/marketcategories/**" security="none" />
-	<security:http pattern="/regioncategories/**" security="none" />
 	<security:http pattern="/**/*.json" security="none" />
 	<security:http pattern="/**/**/*.json" security="none" />
-	<security:http pattern="/files/**/hits" security="none" />
 	<security:http pattern="/users/" security="none" />
 	<security:http pattern="/users/resetPassword" security="none" />
 
