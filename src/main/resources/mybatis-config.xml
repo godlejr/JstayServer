@@ -45,6 +45,7 @@
 
 		<!-- 매퍼 경로 -->
 		<mapper resource="app/HouseUserMapper.xml" />
+		<mapper resource="app/UserMapper.xml" />
 	</mappers>
 
 </configuration>
