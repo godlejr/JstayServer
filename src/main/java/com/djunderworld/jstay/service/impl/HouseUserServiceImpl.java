@@ -16,6 +16,16 @@ public class HouseUserServiceImpl implements HouseUserService {
 	@Autowired
 	private HouseUserMapper houseUserMapper;
 	
+	/**
+	 * 숙박 즐겨찾기 best5 검색 함수
+	 * 
+	 * @author dongjooKim
+	 * 
+	 * 
+	 * @throws Exception
+	 * 
+	 * @return List<HouseUser>
+	 */
 	@Override
 	public List<HouseUser> getHouseUsersBest5() throws Exception {
 		return houseUserMapper.getHouseUsersOrderByHouseCountDescLimitFive();

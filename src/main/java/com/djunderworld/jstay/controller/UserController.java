@@ -1,12 +1,18 @@
 package com.djunderworld.jstay.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.djunderworld.jstay.common.dao.User;
@@ -75,6 +81,26 @@ public class UserController {
 		redirectAttributes.addAttribute("password", password);
 
 		return "redirect:/users/login.json";
+	}
+	
+	/**
+	 * 유저 정보 수정 API(파일: 아바타 사진)
+	 * 
+	 * @author dongjooKim
+	 * 
+	 * @param id
+	 * @param user
+	 * @param file
+	 * @return User
+	 * 
+	 * @throws Exception
+	 */
+	@Secured("ROLE_USER")
+	@RequestMapping(value = "/{id}", method = { RequestMethod.POST, RequestMethod.PUT })
+	@ResponseBody
+	public User updateUserById(@PathVariable long id, @RequestPart User user,
+			@RequestPart(required = false) List<MultipartFile> files) throws Exception {
+		return userService.updateUserByIdAndMultipartFiles(user, files);
 	}
 
 }

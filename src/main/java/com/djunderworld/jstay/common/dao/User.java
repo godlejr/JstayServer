@@ -1,5 +1,15 @@
 package com.djunderworld.jstay.common.dao;
 
+/**
+ * 
+ * 유저정보 엔티티 클래스
+ * 
+ * 이메일, 비밀번호, 이름, 전화번호, 아바타사진, 레벨(1.일반유저, 9.관리자), Firebase 토큰, 디바이스 기기 ID 정보,
+ * 로그인 접근방법 정보, 엑세스 토큰
+ * 
+ * @author dongjooKim
+ * 
+ */
 public class User extends Base {
 	private String email;
 	private String password;

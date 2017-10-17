@@ -24,8 +24,8 @@
 	<!-- 타입 별칭 설정 -->
 	<typeAliases>
 		<!-- DTO -->
-		<typeAlias type="com.djunderworld.jstay.common.dto.House"
-			alias="House"></typeAlias>
+		<typeAlias type="com.djunderworld.jstay.common.dto.HouseDto"
+			alias="HouseDto"></typeAlias>
 
 		<!-- DAO -->
 		<typeAlias type="com.djunderworld.jstay.common.dao.HouseUser"
@@ -44,6 +44,7 @@
 		<mapper resource="common/CommonSQL.xml" />
 
 		<!-- 매퍼 경로 -->
+		<mapper resource="app/HouseMapper.xml" />
 		<mapper resource="app/HouseUserMapper.xml" />
 		<mapper resource="app/UserMapper.xml" />
 	</mappers>

@@ -1,5 +1,9 @@
 package com.djunderworld.jstay.service;
 
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import com.djunderworld.jstay.common.dao.User;
 
 public interface UserService {
@@ -31,7 +35,7 @@ public interface UserService {
 	User getUserByEmailAndPassword(String email, String password) throws Exception;
 
 	/**
-	 * 회원가입 함수 (일반인, 상인 구분)
+	 * 회원가입 함수 
 	 * 
 	 * @author dongjooKim
 	 * 
@@ -40,5 +44,18 @@ public interface UserService {
 	 * @throws Exception
 	 */
 	void saveUser(User user) throws Exception;
+	
+	/**
+	 * 유저 정보 수정 함수
+	 * 
+	 * @author dongjooKim
+	 * 
+	 * @param user
+	 * @param file
+	 * @return User
+	 * 
+	 * @throws Exception
+	 */
+	User updateUserByIdAndMultipartFiles(User user, List<MultipartFile> multipartFiles) throws Exception;
 
 }

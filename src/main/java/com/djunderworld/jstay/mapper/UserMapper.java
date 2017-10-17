@@ -46,4 +46,29 @@ public interface UserMapper {
 	 * @throws Exception
 	 */
 	void saveUser(User user) throws Exception;
+
+	/**
+	 * 유저 수정 함수
+	 * 
+	 * @author dongjooKim
+	 * 
+	 * @param user
+	 * 
+	 * @throws Exception
+	 */
+	void updateUserById(User user) throws Exception;
+
+	/**
+	 * 유저 아이디로 유저 검색 함수
+	 * 
+	 * @author dongjooKim
+	 * 
+	 * 
+	 * @param id
+	 * 
+	 * @return User
+	 * 
+	 * @throws Exception
+	 */
+	User getUserById(@Param("id") long id) throws Exception;
 }
