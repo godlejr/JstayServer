@@ -22,7 +22,7 @@
 	
 	<!-- SELECT Query -->
 	<select id="getUserById" resultMap="UserResult">
-		SELECT	<include refid="com.djunderworld.stay.engine.db.common.sql.UserColumns">
+		SELECT	<include refid="com.djunderworld.jstay.engine.db.common.sql.UserColumns">
 					<property name="userTableAlias" value="us"/>
 					<property name="prefix" value="user_"/>
 				</include>
