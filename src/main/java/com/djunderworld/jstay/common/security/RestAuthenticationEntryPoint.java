@@ -20,7 +20,7 @@ public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
 	@Value("#{jwt['jwt.message']}")
 	private String message;
-
+	
 	/**
 	 * 인증 예외 관련 에러메시지 송출 함수
 	 * 

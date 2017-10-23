@@ -18,4 +18,29 @@ public interface HouseUserService {
 	 */
 	List<HouseUser> getHouseUsersBest5() throws Exception;
 
+	
+	/**
+	 * 숙박 즐겨찾기 등록 함수
+	 * 
+	 * @author dongjooKim
+	 *
+	 * @param houseUser
+	 * 
+	 * @throws Exception
+	 * 
+	 */
+	void saveHouseUser(HouseUser houseUser) throws Exception;
+
+	/**
+	 * 숙박 즐겨찾기 취소 함수
+	 * 
+	 * @author dongjooKim
+	 *
+	 * @param houseUser
+	 * 
+	 * @throws Exception
+	 * 
+	 */
+	void deleteHouseUser(HouseUser houseUser) throws Exception;
+
 }

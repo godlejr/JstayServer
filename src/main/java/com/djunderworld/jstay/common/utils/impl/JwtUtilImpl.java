@@ -33,7 +33,7 @@ public class JwtUtilImpl implements JwtUtil {
 		System.out.println(SECRET_KEY);
 		return Integer.valueOf((String) body.get("user_level"));
 	}
-
+	
 	/**
 	 * 유저레벨과 시크릿 키로 엑세스 토큰(claims)생성 함수
 	 * 

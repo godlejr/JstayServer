@@ -25,5 +25,19 @@
 				order by	count(house_user_house_id)	desc 
 				limit 5;
 	</select>
+	
+	<!-- INSERT Query -->
+	<insert id="saveHouseUser" parameterType="HouseUser">
+		INSERT	INTO	house_users(user_id,house_id) 
+			VALUES (#{user.id}, #{houseId});
+	</insert>
+	
+	<!-- DELETE Query -->
+	<delete id="deleteHouseUser" parameterType="HouseUser">
+		delete	from	house_users
+				where	user_id	=	#{user.id}	and
+						house_id	=	#{houseId}
+	</delete>
+	
 
 </mapper>

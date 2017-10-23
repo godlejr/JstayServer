@@ -79,7 +79,7 @@ public class UserController {
 
 		redirectAttributes.addAttribute("email", email);
 		redirectAttributes.addAttribute("password", password);
-
+		
 		return "redirect:/users/login.json";
 	}
 	

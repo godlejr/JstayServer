@@ -30,5 +30,35 @@ public class HouseUserServiceImpl implements HouseUserService {
 	public List<HouseUser> getHouseUsersBest5() throws Exception {
 		return houseUserMapper.getHouseUsersOrderByHouseCountDescLimitFive();
 	}
+	
+	/**
+	 * 숙박 즐겨찾기 등록 함수
+	 * 
+	 * @author dongjooKim
+	 *
+	 * @param houseUser
+	 * 
+	 * @throws Exception
+	 * 
+	 */
+	@Override
+	public void saveHouseUser(HouseUser houseUser) throws Exception {
+		houseUserMapper.saveHouseUser(houseUser);
+	}
+
+	/**
+	 * 숙박 즐겨찾기 취소 함수
+	 * 
+	 * @author dongjooKim
+	 *
+	 * @param houseUser
+	 * 
+	 * @throws Exception
+	 * 
+	 */
+	@Override
+	public void deleteHouseUser(HouseUser houseUser) throws Exception {
+		houseUserMapper.deleteHouseUser(houseUser);
+	}
 
 }
