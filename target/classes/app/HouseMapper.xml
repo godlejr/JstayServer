@@ -18,13 +18,13 @@
 					<property name="alias" value="reviewCount"/>
 				    <property name="table" value="reviews"/>
 				    <property name="column" value="house_id"/>
-				</include> #{houseId}  as reviewCount,
+				</include> #{houseId}) as reviewCount,
 				
 				(<include refid="com.djunderworld.jstay.engine.db.common.sql.selectCount">
 					<property name="alias" value="houseUserCount"/>
 				    <property name="table" value="house_users"/>
 				    <property name="column" value="house_id"/>
-				</include> #{houseId}  as houseUserCount,
+				</include> #{houseId})  as houseUserCount,
 				
 				(<include refid="com.djunderworld.jstay.engine.db.common.sql.selectCount">
 					<property name="alias" value="isFollowed"/>
