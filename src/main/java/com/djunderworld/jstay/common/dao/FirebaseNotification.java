@@ -4,8 +4,8 @@ package com.djunderworld.jstay.common.dao;
  * 
  * 파이어 베이스 알림 정보 엔티티 클래스
  * 
- * 행위자 정보, 수신자 아이디, 수신자 유형, 알림 주 내용,
- * 페이지 이동 아이디정보(1.리뷰, 2.숙박업소 상세), 페이지 이동 유형(1.리뷰, 2.숙박업소 상세), 유저 행위 정보, 수신확인 체크 여부
+ * 행위자 정보, 수신자 아이디, 수신자 유형, 알림 주 내용, 페이지 이동 아이디정보(1.리뷰, 2.숙박업소 상세), 페이지 이동
+ * 유형(1.리뷰, 2.숙박업소 상세), 유저 행위 정보, 수신확인 체크 여부
  * 
  * @author dongjooKim
  */
@@ -14,7 +14,7 @@ public class FirebaseNotification extends Base {
 	private long receiverId;
 	private long receiverCategoryId;
 	private String content;
-	private long navigationId;
+	private String navigationId;
 	private long navigationCategoryId;
 	private Behavior behavior;
 	private int checked;
@@ -59,11 +59,11 @@ public class FirebaseNotification extends Base {
 		this.content = content;
 	}
 
-	public long getNavigationId() {
+	public String getNavigationId() {
 		return navigationId;
 	}
 
-	public void setNavigationId(long navigationId) {
+	public void setNavigationId(String navigationId) {
 		this.navigationId = navigationId;
 	}
 

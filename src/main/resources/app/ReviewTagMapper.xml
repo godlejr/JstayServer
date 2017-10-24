@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.djunderworld.jstay.mapper.ReviewTagMapper">
+
+	<!-- INSERT Query -->
+	<insert id="saveReviewTags" parameterType="java.util.List">
+		<if test="reviewTags.size > 0">
+			INSERT INTO review_tags (review_id, tag_name)
+			VALUES
+			<foreach collection="reviewTags" item="reviewTag" separator=",">
+				(#{reviewTag.review.id}, #{reviewTag.tagName})
+			</foreach>
+		</if>
+	</insert>
+	
+	
+	<!-- DELETE Query -->
+	
+</mapper>

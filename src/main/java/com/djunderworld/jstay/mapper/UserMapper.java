@@ -1,5 +1,7 @@
 package com.djunderworld.jstay.mapper;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -71,4 +73,18 @@ public interface UserMapper {
 	 * @throws Exception
 	 */
 	User getUserById(@Param("id") long id) throws Exception;
+
+	/**
+	 * 숙박정보를 팔로우하는 유저들 파이어베이스 토큰 리스트 검색 함수
+	 * 
+	 * @author dongjooKim
+	 * 
+	 * 
+	 * @param navigationId
+	 * 
+	 * @return List<User>
+	 * 
+	 * @throws Exception
+	 */
+	List<User> getFollowersFcmTokenListByHouseId(@Param("houseId")String navigationId) throws Exception;
 }

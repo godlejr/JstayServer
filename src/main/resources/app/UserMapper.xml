@@ -54,6 +54,17 @@
 				where	us.email	=	#{email}	and
 						us.password	=	#{password};
 	</select>
+	
+	<select id="getFollowersFcmTokenListByHouseId" resultType="User">
+		SELECT	us.id	as	id,
+				us.fcm_token	as	fcm_token
+				
+				FROM	users	us,
+						house_users	hu
+						
+				where	hu.user_id	=	us.id	and
+						hu.house_id	=	#{houseId}
+	</select>
 
 	<!-- INSERT Query -->
 	<insert id="saveUser" parameterType="User" useGeneratedKeys="true" keyProperty="id">

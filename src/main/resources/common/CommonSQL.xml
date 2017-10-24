@@ -58,6 +58,27 @@
 		${houseUserAlias}.created_at as ${prefix}created_at,
 		${houseUserAlias}.updated_at as ${prefix}updated_at
 	</sql>
+	
+	<sql id="BehaviorColumns">
+		${behaviorTableAlias}.id as ${prefix}id,
+		${behaviorTableAlias}.name as ${prefix}name,
+		${behaviorTableAlias}.created_at as ${prefix}created_at,
+		${behaviorTableAlias}.updated_at as ${prefix}updated_at
+	</sql>
 
+	<sql id="FileColumns">
+		${fileTableAlias}.id as ${prefix}id,
+		${fileTableAlias}.review_id as ${prefix}review_id,
+		${fileTableAlias}.user_id as ${prefix}user_id,
+		${fileTableAlias}.post_category_id as ${prefix}post_category_id,
+		${fileTableAlias}.type	as ${prefix}type,
+		${fileTableAlias}.name as ${prefix}name,
+		${fileTableAlias}.ext as ${prefix}ext,
+		${fileTableAlias}.size as	${prefix}size,
+		${fileTableAlias}.hits as	${prefix}hits,
+		${fileTableAlias}.created_at as ${prefix}created_at,
+		${fileTableAlias}.updated_at as ${prefix}updated_at
+	</sql>
+	
 
 </mapper>

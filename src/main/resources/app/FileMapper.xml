@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.djunderworld.jstay.mapper.FileMapper">
+	
+
+	<!-- INSERT Query -->
+	<insert id="saveFiles" parameterType="java.util.List">
+		<if test="files.size > 0">
+			INSERT INTO files (review_id, user_id, post_category_id, type, name, ext, size) 
+				VALUES 
+				<foreach collection="files" item="file" separator=",">
+					(#{file.review.id}, #{file.user.id}, #{file.postCategoryId}, #{file.type}, #{file.name}, #{file.ext}, #{file.size})
+				</foreach>		
+		</if>
+	</insert>
+
+</mapper>

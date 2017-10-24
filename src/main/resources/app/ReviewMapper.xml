@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.djunderworld.jstay.mapper.ReviewMapper">
+
+	<!-- Result Map -->
+
+	<resultMap id="ReviewResult" type="Review">
+		<id property="id" column="review_id" />
+		<result property="houseId" column="review_house_id" />
+		<result property="rate" column="review_rate" />
+		<result property="content" column="review_content" />
+		<result property="likeCount" column="review_like_count" />
+		<result property="commentCount" column="review_comment_count" />
+		<result property="isLikeChecked" column="review_like_check"/>
+		<result property="createdAt" column="review_created_at" />
+		<result property="updatedAt" column="review_updated_at" />
+
+		<association property="user" resultMap="UserResult" />
+		<collection property="files" javaType="ArrayList" ofType="File"
+			column="story_id" select="getFilesForReview" />
+
+	</resultMap>
+	
+
+	<resultMap id="UserResult" type="User">
+		<id property="id" column="user_id" />
+		<result property="email" column="user_email" />
+		<result property="name" column="user_name" />
+		<result property="phone" column="user_phone" />
+		<result property="avatar" column="user_avatar" />
+		<result property="fcmToken" column="user_fcm_token" />
+		<result property="deviceId" column="user_device_id" />
+		<result property="loginCategoryId" column="user_login_category_id" />
+		<result property="level" column="user_level" />
+		<result property="createdAt" column="user_created_at" />
+		<result property="updatedAt" column="user_updated_at" />
+	</resultMap>
+
+
+
+	<!-- SELECT Query -->
+
+	<select id="getFilesForReview" resultMap="FileResult">
+		SELECT	<include refid="com.djunderworld.jstay.engine.db.common.sql.FileColumns">
+					<property name="fileTableAlias" value="fi" />
+					<property name="prefix" value="file_" />
+				</include>
+
+			FROM 	files fi,
+					reviews rv
+	
+			where 	fi.post_category_id = 1 	and
+					fi.story_id = st.id 	and
+					fi.type	!=	2	and
+					rv.id = #{id}
+	</select>
+	
+	<!-- INSERT Query -->
+	<insert id="saveReview" parameterType="Review" useGeneratedKeys="true"
+		keyProperty="id">
+		INSERT INTO reviews(user_id, house_id, content, rate) VALUES
+		(#{user.id},#{houseId},#{content}, #{rate});
+	</insert>
+	
+	
+	<!-- DELETE Query -->
+	
+	
+</mapper>

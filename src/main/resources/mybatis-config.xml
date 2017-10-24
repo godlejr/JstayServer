@@ -37,6 +37,21 @@
 		<typeAlias type="com.djunderworld.jstay.common.dao.User"
 			alias="User"></typeAlias>
 
+		<typeAlias type="com.djunderworld.jstay.common.dao.Behavior"
+			alias="Behavior"></typeAlias>
+
+		<typeAlias type="com.djunderworld.jstay.common.dao.FirebaseNotification"
+			alias="FirebaseNotification"></typeAlias>
+
+		<typeAlias type="com.djunderworld.jstay.common.dao.ReviewTag"
+			alias="ReviewTag"></typeAlias>
+
+		<typeAlias type="com.djunderworld.jstay.common.dao.UserNotification"
+			alias="UserNotification"></typeAlias>
+
+		<typeAlias type="com.djunderworld.jstay.common.dao.ReviewComment"
+			alias="ReviewComment"></typeAlias>
+
 	</typeAliases>
 
 	<mappers>
@@ -47,6 +62,11 @@
 		<mapper resource="app/HouseMapper.xml" />
 		<mapper resource="app/HouseUserMapper.xml" />
 		<mapper resource="app/UserMapper.xml" />
+		<mapper resource="app/FileMapper.xml" />
+		<mapper resource="app/ReviewMapper.xml" />
+		<mapper resource="app/ReviewTagMapper.xml" />
+		<mapper resource="app/FirebaseNotificationMapper.xml" />
+		<mapper resource="app/BehaviorMapper.xml" />
 	</mappers>
 
 </configuration>
